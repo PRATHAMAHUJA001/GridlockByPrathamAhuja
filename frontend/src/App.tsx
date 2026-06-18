@@ -18,9 +18,9 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route element={<Layout />}>
-            <Route path="/" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/detect" element={<DetectionPage />} />
             <Route path="/ai-analysis" element={<AIAnalysisPage />} />
             <Route path="/violations" element={<ViolationsPage />} />

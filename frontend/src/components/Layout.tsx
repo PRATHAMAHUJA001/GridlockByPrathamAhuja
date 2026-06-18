@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/detect', label: 'Live Detection', icon: ScanSearch },
   { path: '/ai-analysis', label: 'AI Analysis', icon: Brain },
   { path: '/violations', label: 'Violation Records', icon: AlertTriangle },
@@ -64,7 +64,7 @@ export default function Layout() {
         </nav>
         <div className="p-4 border-t border-[#1e1e2e]">
           <Link
-            to="/landing"
+            to="/"
             className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
           >
             TrafficSarathi v1.0 — View Landing Page
