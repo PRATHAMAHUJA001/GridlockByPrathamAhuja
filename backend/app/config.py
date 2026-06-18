@@ -16,6 +16,9 @@ class Settings(BaseSettings):
 
     CONFIDENCE_THRESHOLD: float = 0.35
 
+    TRAFFICSARATHI_OCR_ENGINE: str = "easyocr"
+    TRAFFICSARATHI_THOROUGH_OCR: str = "0"
+
     # Comma-separated list of allowed CORS origins; defaults to localhost dev server.
     # In production set this to your Vercel frontend URL, e.g.:
     #   ALLOWED_ORIGINS=https://trafficsarathi.vercel.app
