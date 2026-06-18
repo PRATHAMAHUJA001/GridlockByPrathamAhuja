@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+pydantic
+pydantic-settings
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+ultralytics
+opencv-python-headless
+easyocr
+pytesseract  # optional, lighter OCR engine (set TRAFFICSARATHI_OCR_ENGINE=tesseract; needs system tesseract-ocr binary)
+numpy
+Pillow
+aiofiles
+email-validator

@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/ml_models:/app/ml_models
+      - ./backend/uploads:/app/uploads
+      - ./backend/evidence:/app/evidence
+    environment:
+      - DATABASE_URL=sqlite:///./traffic_violations.db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend

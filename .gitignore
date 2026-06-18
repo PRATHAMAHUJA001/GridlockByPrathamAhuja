@@ -1,0 +1,60 @@
+# Claude Code session files — local only
+CLAUDE.md
+
+# Deployment configs — kept local, not committed
+render.yaml
+vercel.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Environment — actual secrets are gitignored; .env.example is tracked
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+
+# Database & local storage
+backend/traffic_violations.db
+backend/uploads/
+backend/evidence/
+backend/ml_models/
+
+# Debug artifacts
+_dbg_*.png
+_crop_*.png
+test_plates*.py
+
+# ML model weights (download separately)
+*.pt
+!yolov8s.pt
+
+# Node
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store

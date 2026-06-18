@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #12121a;
+  --color-surface-dark: #0a0a0f;
+  --color-border-subtle: #1e1e2e;
+  --color-accent-cyan: #22d3ee;
+  --color-accent-blue: #3b82f6;
+  --color-accent-orange: #f97316;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0f;
+  color: #e5e5e5;
+}
+
+select option {
+  background-color: #12121a;
+  color: #e5e5e5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1e2e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3e;
+}
+
+/* Gradient border animation for dropzone */
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dropzone-gradient {
+  background: linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6, #22d3ee);
+  background-size: 300% 300%;
+  animation: gradient-rotate 3s ease infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(34, 211, 238, 0.15); }
+}
+
+.glow-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
