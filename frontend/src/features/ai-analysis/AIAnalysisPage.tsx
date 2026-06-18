@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
 import {
   Upload,
@@ -83,6 +83,7 @@ export default function AIAnalysisPage() {
   const [isEvaluating, setIsEvaluating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [evalResult, setEvalResult] = useState<EvaluationResponse | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Load stored DB images when switching to database mode
   useEffect(() => {
@@ -143,6 +144,7 @@ export default function AIAnalysisPage() {
         }));
       }
       setEvalResult(data);
+      setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     } catch (err: any) {
       setError(err?.response?.data?.detail ?? err?.message ?? 'Evaluation failed');
     } finally {
@@ -312,7 +314,7 @@ export default function AIAnalysisPage() {
 
       {/* Results */}
       {evalResult && (
-        <>
+        <div ref={resultsRef}>
           <div className="flex items-center justify-between pt-2">
             <div className="flex items-center gap-3">
               <BarChart3 className="w-5 h-5 text-cyan-400" />
@@ -408,7 +410,7 @@ export default function AIAnalysisPage() {
               {evidenceUrl && <img src={evidenceUrl} alt="Evidence" className="rounded-lg w-full" />}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

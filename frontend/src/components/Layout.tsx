@@ -7,10 +7,8 @@ import {
   Settings,
   Brain,
   Shield,
-  Bell,
   Search,
   Circle,
-  User,
 } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -84,16 +82,10 @@ export default function Layout() {
               className="bg-transparent border-none outline-none text-gray-400 placeholder-gray-600 text-sm w-64"
             />
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5 text-xs">
               <Circle className="w-2 h-2 fill-emerald-400 text-emerald-400" />
               <span className="text-emerald-400 font-medium">Online</span>
-            </div>
-            <span className="text-xs text-gray-500">Processing</span>
-            <span className="text-xs font-mono bg-cyan-500/10 text-cyan-400 px-2 py-0.5 rounded">AI v2.4.1</span>
-            <Bell className="w-4 h-4 text-gray-500 hover:text-gray-300 cursor-pointer transition-colors" />
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-              <User className="w-3.5 h-3.5 text-white" />
             </div>
           </div>
         </header>
